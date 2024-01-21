@@ -22,14 +22,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className={`container_main `}>
-          <div className="w-[80%] mx-auto px-5 md:px-1">
+          <div>
             <ProviderRedux>
               <ThemeProvider>
-                <div className={oxygen.className}>
+                <div className={`${oxygen.className} w-[80%]  mx-auto`}>
                   <Navbar />
+
+                  <main className="h-screen">{children}</main>
+                  <Footer />
                 </div>
-                {children}
-                <Footer />
               </ThemeProvider>
             </ProviderRedux>
           </div>

@@ -7,19 +7,20 @@
   --text-Color: white;
   --softTextColor: hsl(0, 1%, 43%);
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
 .container_main {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 }
 .dark_mode {
   background-color: var(--bg);
   color: var(--text-Color);
 }
 .ligh_mode {
-  background-color: rgb(237, 237, 237);
+  background-color: white;
   color: black;
 }

@@ -7,6 +7,14 @@ interface ThemeProviderProps {
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const { mode } = useSelector((state) => state?.themeMode);
-  return <div className={mode ? "dark_mode" : "ligh_mode " }>{children}</div>;
+  return (
+    <div
+      className={`${
+        mode ? "dark_mode" : "ligh_mode "
+      }  transition-all  duration-300 `}
+    >
+      {children}
+    </div>
+  );
 };
 export default ThemeProvider;

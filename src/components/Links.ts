@@ -8,7 +8,7 @@ export const MenuLinks: MenuLink[] = [
   {
     id: 1,
     label: "Home",
-    link: "/home",
+    link: "/",
   },
   {
     id: 2,
