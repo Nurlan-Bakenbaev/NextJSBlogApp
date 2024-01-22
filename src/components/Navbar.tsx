@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MenuLinks } from "./Links";
 import Link from "next/link";
 import { MdOutlineDarkMode } from "react-icons/md";
@@ -8,8 +8,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { setMode } from "@/redux-toolkit/modeSlicer";
 const Navbar = () => {
   const { mode } = useSelector((state) => state?.themeMode);
- 
+
   const dispatch = useDispatch();
+  const toggleMode = () => {
+    dispatch(setMode());
+  };
+
   return (
     <nav className="h-[80px] drop-shadow-lg ">
       <div className="flex justify-between items-center py-2">
@@ -18,21 +22,18 @@ const Navbar = () => {
         <div className="flex gap-3 items-center">
           <button
             className={`px-5 py-1
-            transition-all duration-500 ease-in-out bg-gray-200
-             ${
-               mode ? "bg-slate-300" : "bg-slate-800"
-             }  text-gray-200 dark:text-gray-800
-              hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full`}
-            onClick={() => dispatch(setMode())}
+            transition-all duration-500 ease-in-out 
+              bg-slate-800
+               text-gray-200 dark:text-gray-800
+              hover:bg-gray-300 dark:hover:bg-blue-800 rounded-full`}
+            onClick={toggleMode}
           >
             {mode ? (
-              <span className="text-blue-800 ">
-           
+              <span className="text-blue-400 ">
                 <MdOutlineDarkMode className="text-xl" />
               </span>
             ) : (
               <span className=" text-yellow-500">
-             
                 <CiLight className="text-xl" />
               </span>
             )}
