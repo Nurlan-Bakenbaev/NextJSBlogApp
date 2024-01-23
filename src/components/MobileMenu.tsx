@@ -1,30 +1,28 @@
-import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+import React from "react";
 import Link from "next/link";
 import { MenuLinks } from "./Links";
 
-const MobileMenu = () => {
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
+interface MobileMenuProps {
+  isOpenMenu: boolean;
+}
 
-  const toggleMenu = () => {
-    setIsOpenMenu(!isOpenMenu);
-  };
-
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
   return (
-    <div className="flex flex-col md:hidden">
-      <button onClick={toggleMenu}>
-        {isOpenMenu ? <CloseIcon /> : <MenuIcon />}
-      </button>
+    <div className={`mobile-menu ${isOpenMenu ? "open" : "closed"}`}>
       {isOpenMenu && (
-        <div className="mobile-menu w-[200px] bg-slate-500 animate-slide-in">
+      
+        <div className="flex flex-col border-l border-slate-600  h-[100vh] text-center gap-8 px-8 ">
+           <div className="absolute"/>
           {MenuLinks.map((link, id) => (
-            <div className="flex flex-col gap-5 md:hidden" key={id}>
-              <Link className="hover:text-blue-300" href={link.link}>
-                {link.label}
+            <div className="block md:hidden" key={id}>
+              <Link href={link.link}>
+                <p className=" text-xl hover:text-blue-300">{link.label}</p>
               </Link>
             </div>
           ))}
+          <Link href={"/"} className="text-2xl">
+            NEXT-Blog
+          </Link>
         </div>
       )}
     </div>

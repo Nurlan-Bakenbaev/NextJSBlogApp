@@ -7,6 +7,8 @@ import { CiLight } from "react-icons/ci";
 import { useSelector, useDispatch } from "react-redux";
 import { setMode } from "@/redux-toolkit/modeSlicer";
 import MobileMenu from "./MobileMenu";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 const Navbar = () => {
   const { mode } = useSelector((state) => state?.themeMode);
 
@@ -14,9 +16,14 @@ const Navbar = () => {
   const toggleMode = () => {
     dispatch(setMode());
   };
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpenMenu(!isOpenMenu);
+  };
 
   return (
-    <nav className="h-[80px] drop-shadow-lg ">
+    <nav className="h-[80px] drop-shadow-lg relative ">
       <div className="flex justify-between items-center py-2">
         <div> My Posts</div>
         <h1 className=" text-xl md:text-4xl font-bold">NEXT-Blog</h1>
@@ -48,7 +55,14 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        <MobileMenu />
+        <div>
+          <button onClick={toggleMenu}>
+            {isOpenMenu ? <CloseIcon /> : <MenuIcon />}
+          </button>
+          <div className="absolute top-[80px] right-[-70px] ">
+            <MobileMenu isOpenMenu={isOpenMenu} />
+          </div>
+        </div>
       </div>
     </nav>
   );
