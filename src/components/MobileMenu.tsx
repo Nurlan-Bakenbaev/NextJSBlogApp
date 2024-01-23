@@ -10,9 +10,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
   return (
     <div className={`mobile-menu ${isOpenMenu ? "open" : "closed"}`}>
       {isOpenMenu && (
-      
         <div className="flex flex-col border-l border-slate-600  h-[100vh] text-center gap-8 px-8 ">
-           <div className="absolute"/>
           {MenuLinks.map((link, id) => (
             <div className="block md:hidden" key={id}>
               <Link href={link.link}>
