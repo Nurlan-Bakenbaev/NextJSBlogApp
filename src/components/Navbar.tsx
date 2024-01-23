@@ -6,6 +6,7 @@ import { MdOutlineDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 import { useSelector, useDispatch } from "react-redux";
 import { setMode } from "@/redux-toolkit/modeSlicer";
+import MobileMenu from "./MobileMenu";
 const Navbar = () => {
   const { mode } = useSelector((state) => state?.themeMode);
 
@@ -47,6 +48,7 @@ const Navbar = () => {
             </div>
           ))}
         </div>
+        <MobileMenu />
       </div>
     </nav>
   );
