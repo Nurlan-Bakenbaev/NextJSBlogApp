@@ -62,9 +62,7 @@ const Navbar = () => {
           <div className="absolute top-[80px] right-[-70px]  z-50">
             <MobileMenu isOpenMenu={isOpenMenu} />
           </div>
-          {isOpenMenu && (
-            <div className="fixed top-0 left-[-100px] right-[-100px] bottom-0 w-[100vw] h-screen bg-black opacity-40" />
-          )}
+         
         </div>
       </div>
     </nav>
