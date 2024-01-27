@@ -9,6 +9,7 @@ import { setMode } from "@/redux-toolkit/modeSlicer";
 import MobileMenu from "./MobileMenu";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import SimpleBackdrop from "./LayOver";
 const Navbar = () => {
   const { mode } = useSelector((state) => state?.themeMode);
 
@@ -23,8 +24,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="h-[80px] drop-shadow-lg relative ">
-      <div className="flex justify-between items-center py-2">
+    <nav className="h-[80px] drop-shadow-lg relative  border-b ">
+      <div className="flex justify-between items-center px-4 py-2">
         <div> My Posts</div>
         <h1 className=" text-xl md:text-4xl font-bold">NEXT-Blog</h1>
         <div className="flex gap-3 items-center">
@@ -37,12 +38,12 @@ const Navbar = () => {
             onClick={toggleMode}
           >
             {mode ? (
-              <span className="text-blue-400 ">
-                <MdOutlineDarkMode className="text-xl" />
+              <span className="text-yellow-600 ">
+                <CiLight className="text-xl" />
               </span>
             ) : (
-              <span className=" text-yellow-500">
-                <CiLight className="text-xl" />
+              <span className=" text-blue-500">
+                <MdOutlineDarkMode className="text-xl" />
               </span>
             )}
           </button>
@@ -55,16 +56,16 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        <div>
+        <div className="block md:hidden">
           <button onClick={toggleMenu}>
             {isOpenMenu ? <CloseIcon /> : <MenuIcon />}
           </button>
-          <div className="absolute top-[80px] right-[-70px]  z-50">
-            <MobileMenu isOpenMenu={isOpenMenu} />
-          </div>
-         
         </div>
       </div>
+     
+      <div className="absolute  top-[80px] right-[-6px] z-50">
+        <MobileMenu isOpenMenu={isOpenMenu} />
+      </div> <SimpleBackdrop />
     </nav>
   );
 };

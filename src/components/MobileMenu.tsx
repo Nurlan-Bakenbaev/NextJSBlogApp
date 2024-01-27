@@ -13,15 +13,18 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
        bg-state-300 `}
     >
       {isOpenMenu && (
-        <div className="flex flex-col border  h-[100vh] w-full text-center gap-8 px-8 ">
+        <div className="flex flex-col border-l  md:hidden  h-[100vh] w-[250px] text-center gap-12 py-5 px-12 ">
           {MenuLinks.map((link, id) => (
-            <div className="block md:hidden" key={id}>
+            <div className="hover:font-bold" key={id}>
               <Link href={link.link}>
-                <p className=" text-xl hover:text-blue-300">{link.label}</p>
+                <p className=" text-xl hover:text-blue-500">{link.label}</p>
               </Link>
             </div>
           ))}
-          <Link href={"/"} className="text-2xl">
+          <Link
+            href={"/"}
+            className="text-2xl absolute bottom-5 left-0 w-full hover:font-bold"
+          >
             NEXT-Blog
           </Link>
         </div>

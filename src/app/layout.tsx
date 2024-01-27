@@ -25,7 +25,9 @@ export default function RootLayout({
           <div>
             <ProviderRedux>
               <ThemeProvider>
-                <div className={`${oxygen.className} w-[80%]  mx-auto`}>
+                <div
+                  className={`${oxygen.className} px-2  w-[100%] md:w-[80]  mx-auto`}
+                >
                   <Navbar />
 
                   <main className="h-screen">{children}</main>
