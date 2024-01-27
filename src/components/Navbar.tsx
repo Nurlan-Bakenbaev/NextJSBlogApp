@@ -18,7 +18,6 @@ const Navbar = () => {
   useEffect(() => {
     const handleResize = () => {
       const screenSize = window.innerWidth;
-      console.log(screenSize);
       if (screenSize > 425) {
         setIsOpenMenu(false);
       }
@@ -38,7 +37,9 @@ const Navbar = () => {
         <h1 className=" text-xl md:text-4xl font-bold">NEXT-Blog</h1>
         <div className="flex gap-3 items-center">
           {/*HERE GOES SWITCHER */}
-          <ModeSwitcher />
+          <div className="hidden md:flex">
+            <ModeSwitcher />
+          </div>
           {MenuLinks.map((link, id) => (
             <div className="hidden md:block" key={id}>
               <Link className="hover:text-blue-300 " href={link.link}>
@@ -60,12 +61,14 @@ const Navbar = () => {
       <div className="absolute  top-0 right-0 z-30">
         <MobileMenu isOpenMenu={isOpenMenu} />
       </div>
-      <div
-        className="absolute w-full h-screen "
-        onClick={() => setIsOpenMenu(false)}
-      >
-        <SimpleBackdrop isOpenMenu={isOpenMenu} />
-      </div>
+      {isOpenMenu && (
+        <div
+          className="absolute w-full h-screen "
+          onClick={() => setIsOpenMenu(false)}
+        >
+          <SimpleBackdrop isOpenMenu={isOpenMenu} />
+        </div>
+      )}
     </nav>
   );
 };

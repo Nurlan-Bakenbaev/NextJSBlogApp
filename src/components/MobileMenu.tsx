@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { MenuLinks } from "./Links";
 import { useSelector } from "react-redux";
+import ModeSwitcher from "./Switcher/ModeSwitcher";
 
 interface MobileMenuProps {
   isOpenMenu: boolean;
@@ -20,7 +21,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
           className={` ${
             mode ? " bg-black " : " bg-white "
           }border-l border-b  md:hidden
-          h-screen w-[270px]  py-12 px-10 `}
+          h-screen xs:w-[220px] sm:w-[280px]  py-12 px-10 `}
         >
           {MenuLinks.map((link, id) => (
             <div
@@ -34,6 +35,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
               </Link>
             </div>
           ))}
+          <div className="flex justify-center pt-5 md:hidden ">
+            <ModeSwitcher />
+          </div>
         </div>
       )}
     </div>

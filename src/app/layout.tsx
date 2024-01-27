@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <div className={`container_main `}>
           <div>
             <ProviderRedux>
@@ -29,7 +29,9 @@ export default function RootLayout({
                   className={`${oxygen.className} md:px-2  w-[100%] md:w-[80]  mx-auto`}
                 >
                   <Navbar />
-                  <main className="h-screen px-2">{children}</main>
+                  <main className={` ${inter.className} h-full px-2`}>
+                    {children}
+                  </main>
                   <Footer />
                 </div>
               </ThemeProvider>

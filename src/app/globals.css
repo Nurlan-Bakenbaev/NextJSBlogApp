@@ -24,10 +24,10 @@ a {
 }
 
 .dark_mode {
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text-Color);
 }
 .ligh_mode {
-  background-color: white;
+  background: white;
   color: black;
 }
