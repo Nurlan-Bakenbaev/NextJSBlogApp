@@ -11,7 +11,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     <div
       className={`${
         mode ? "dark_mode" : "ligh_mode "
-      }  transition-all  duration-300 `}
+      }  transition-all  duration-500 ease-in-out`}
     >
       {children}
     </div>

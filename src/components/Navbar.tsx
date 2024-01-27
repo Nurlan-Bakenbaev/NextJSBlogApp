@@ -22,6 +22,21 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpenMenu(!isOpenMenu);
   };
+  useEffect(() => {
+    const handleResize = () => {
+      const screenSize = window.innerWidth;
+      console.log(screenSize);
+      if (screenSize > 425) {
+        setIsOpenMenu(false);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <nav className="h-[80px] drop-shadow-lg relative  border-b ">
@@ -56,16 +71,21 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        <div className="block md:hidden">
+        <div className="block md:hidden  z-50">
           <button onClick={toggleMenu}>
             {isOpenMenu ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
       </div>
-     
-      <div className="absolute  top-[80px] right-[-6px] z-50">
+      <div className="absolute  top-0 right-0 z-30">
         <MobileMenu isOpenMenu={isOpenMenu} />
-      </div> <SimpleBackdrop />
+      </div>
+      <div
+        className="absolute w-full h-screen "
+        onClick={() => setIsOpenMenu(false)}
+      >
+        <SimpleBackdrop isOpenMenu={isOpenMenu} />
+      </div>
     </nav>
   );
 };

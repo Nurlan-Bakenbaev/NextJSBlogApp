@@ -3,11 +3,14 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
 
-export default function SimpleBackdrop() {
-  const [open, setOpen] = React.useState(true);
+interface MobileMenuProps {
+  isOpenMenu: boolean;
+}
+export const SimpleBackdrop: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
   return (
     <div>
-      <Backdrop sx={{ position: "absolute", zIndex: "20", }} open={open} />
+      <Backdrop sx={{ position: "absolute", zIndex: "20" }} open={isOpenMenu} />
     </div>
   );
-}
+};
+export default SimpleBackdrop;
