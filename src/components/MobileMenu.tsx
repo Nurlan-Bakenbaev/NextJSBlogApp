@@ -10,7 +10,6 @@ interface MobileMenuProps {
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
   const { mode } = useSelector((state) => state?.themeMode);
 
-
   return (
     <div
       className={`mobile-menu ${isOpenMenu ? "open" : "closed"}
@@ -18,24 +17,23 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
     >
       {isOpenMenu && (
         <div
-          className={`flex flex-col ${
+          className={` ${
             mode ? " bg-black " : " bg-white "
           }border-l border-b  md:hidden
-          h-screen w-[250px] text-center gap-12 py-5 px-12 `}
+          h-screen w-[270px]  py-12 px-10 `}
         >
           {MenuLinks.map((link, id) => (
-            <div className="hover:font-bold pt-10" key={id}>
+            <div
+              className="hover:font-bold flex flex-col pt-10 text-center  "
+              key={id}
+            >
               <Link href={link.link}>
-                <p className=" text-xl hover:text-blue-500">{link.label}</p>
+                <p className=" text-xl p-3 w-full rounded-xl hover:bg-blue-500">
+                  {link.label}
+                </p>
               </Link>
             </div>
           ))}
-          <Link
-            href={"/"}
-            className="text-2xl absolute bottom-5 left-0 w-full hover:font-bold"
-          >
-            NEXT-Blog
-          </Link>
         </div>
       )}
     </div>
