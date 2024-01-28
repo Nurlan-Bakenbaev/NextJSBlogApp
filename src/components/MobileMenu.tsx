@@ -21,7 +21,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
           className={` ${
             mode ? " bg-black " : " bg-white "
           }border-l border-b  md:hidden
-          h-screen xs:w-[220px] sm:w-[280px]  py-12 px-10 `}
+          h-screen w-[280px] md:w-[300px]  py-12 px-10 `}
         >
           {MenuLinks.map((link, id) => (
             <div
