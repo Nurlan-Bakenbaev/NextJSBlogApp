@@ -4,8 +4,8 @@ import PopularPost from "./PopularPost";
 
 const CardList = () => {
   return (
-    <div className=" flex flex-col md:flex-row gap-5">
-      <div className="flex flex-col gap-5 h-screen">
+    <div className="flex flex-col md:flex-row gap-5 items-baseline ">
+      <div className="flex flex-col gap-5 mb-5">
         <h2 className="text-xl font-bold  ">Recent Posts</h2>
         <PostCard />
         <PostCard />
@@ -17,7 +17,6 @@ const CardList = () => {
         <PopularPost />
         <PopularPost />
         <PopularPost />
-
       </div>
     </div>
   );
