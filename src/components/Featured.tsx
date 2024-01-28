@@ -12,7 +12,7 @@ const Featured = () => {
         <div className="flex flex-col  md:flex-row  justify-center items-center gap-5">
           <div>
             <Image
-              className=" rounded-lg "
+              className=" rounded-lg filter  hover:brightness-50 duration-500 ease-in-out "
               objectFit="contain"
               width={700}
               height={500}

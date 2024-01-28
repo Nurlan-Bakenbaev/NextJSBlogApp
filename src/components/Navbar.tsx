@@ -63,7 +63,7 @@ const Navbar = () => {
       </div>
       {isOpenMenu && (
         <div
-          className="absolute w-full h-screen "
+          className="absolute h-[1200px] w-full  "
           onClick={() => setIsOpenMenu(false)}
         >
           <SimpleBackdrop isOpenMenu={isOpenMenu} />
