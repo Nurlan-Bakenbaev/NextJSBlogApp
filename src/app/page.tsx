@@ -7,7 +7,7 @@ import React from "react";
 const Home = () => {
   return (
     <div>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-10">
         <Featured />
         <CategoryList />
         <div>
