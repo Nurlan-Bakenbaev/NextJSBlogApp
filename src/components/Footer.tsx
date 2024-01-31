@@ -1,9 +1,32 @@
-import React from 'react'
+// components/CreativeFooter.js
+import Link from "next/link";
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
-const Footer = () => {
+const CreativeFooter = () => {
   return (
-    <div> this is Footer</div>
-  )
-}
+    <footer className=" p-8">
+      <div className="container mx-auto flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold mb-2">Connect with us</h1>
+          <p>Follow us on social media for updates and more.</p>
+        </div>
+        <div className="flex space-x-4">
+          <Link href="#" className="text-3xl text-blue-500 hover:text-blue-300">
+            <FaFacebook />
+          </Link>
+          <Link href="#" className="text-3xl text-pink-500 hover:text-pink-300">
+            <FaInstagram />
+          </Link>
+          <Link href="#" className="text-3xl text-blue-400 hover:text-blue-200">
+            <FaTwitter />
+          </Link>
+          <Link href="#" className="text-3xl text-blue-700 hover:text-blue-500">
+            <FaLinkedin />
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default CreativeFooter;
