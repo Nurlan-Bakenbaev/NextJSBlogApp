@@ -1,6 +1,7 @@
 import React from "react";
 import PostCard from "./PostCard";
 import PopularPost from "./PopularPost";
+import Pagination from "./Pagination";
 
 const CardList = () => {
   return (
@@ -11,6 +12,7 @@ const CardList = () => {
         <PostCard />
         <PostCard />
         <PostCard />
+        <Pagination />
       </div>
       <div className=" flex flex-col">
         <h3 className="text-lg  font-bold ">Popular Posts</h3>
