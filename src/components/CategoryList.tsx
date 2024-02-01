@@ -14,7 +14,7 @@ const categories = [
 ];
 const CategoryList = () => {
   return (
-    <div>
+    <div className="my-2 md:my-5">
       <div className=" flex flex-row justify-between flex-wrap gap-3 ">
         {categories.map((cat, ind) => (
           <Link

@@ -5,9 +5,6 @@ import Buttons from "./Buttons";
 const Featured = () => {
   return (
     <div className=" px-5 md:px-1  ">
-      <h2 className="text-lg md:text-4xl  text-center my-3">
-        Blog Post website with CRUD
-      </h2>
       <div>
         <div className="flex flex-col  md:flex-row  justify-center items-center gap-5">
           <div>
