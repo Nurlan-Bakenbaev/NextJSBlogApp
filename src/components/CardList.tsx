@@ -14,8 +14,8 @@ const CardList = () => {
         <PostCard />
         <Pagination />
       </div>
-      <div className=" flex flex-col">
-        <h3 className="text-lg  font-bold  text-right">Popular Posts</h3>
+      <div className=" flex flex-col border-l-[1px] border-gray-700 px-2 py-1">
+        <h3 className="text-lg font-bold  text-right">Popular Posts</h3>
         <PopularPost />
         <PopularPost />
         <PopularPost />

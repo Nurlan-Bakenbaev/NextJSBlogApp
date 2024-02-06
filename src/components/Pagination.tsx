@@ -4,7 +4,7 @@ import React from "react";
 const Pagination = () => {
   return (
     <div className="w-full  flex justify-center gap-5 ">
-      <Button color="success" variant="outlined">
+      <Button sx={{ border: "1px solid blue" }} variant="outlined">
         Next
       </Button>
       <Button color="success" variant="outlined">
