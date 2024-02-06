@@ -3,7 +3,7 @@ import React from "react";
 
 const PopularPost = () => {
   return (
-    <div className="w-full md:w-[350px] lg:w-full mt-12 md:mt-5 flex flex-col items-start gap-3">
+    <div className=" w-full md:w-[280px] lg:w-[350px] flex flex-col items-start gap-3">
       <div className="p-1 rounded-md bg-orange-500">Travel</div>
       <div className="w-[50px] h-[50px] rounded-full border overflow-hidden">
         <Image
