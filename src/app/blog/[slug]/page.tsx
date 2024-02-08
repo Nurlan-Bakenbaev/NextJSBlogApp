@@ -48,6 +48,7 @@ const BlogPage = () => {
           {isUser ? (
             <div className="w-full">
               <Comments />
+            
             </div>
           ) : (
             <div>Login to leave a comments </div>

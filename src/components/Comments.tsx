@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+
+import User from "./User";
 
 const Comments = () => {
   return (
@@ -10,6 +13,13 @@ const Comments = () => {
           Send
         </button>
       </form>
+      <div className="py-3">
+        <User
+          commentImage={"/pexels-trinity-kubassek-445109.jpg"}
+          userName={"nothing"}
+          postDate={"nothingYET"}
+        />
+      </div>
     </div>
   );
 };
