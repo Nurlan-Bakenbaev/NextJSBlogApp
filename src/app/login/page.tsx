@@ -18,7 +18,7 @@ const Login = () => {
       >
         <div className="flex flex-col gap-5  ">
           <Button
-            className="hover:bg-blue-600 transition-all duration-500 hover:scale-110 flex gap-2 items-center drop-shadow-lg"
+            className="hover:bg-blue-600 transition-all text-xs md:text-sm duration-500 hover:scale-110 flex gap-2 items-center drop-shadow-lg"
             variant={`${mode ? "outlined" : "contained"}`}
             sx={{
               color: `${mode ? "white" : "black"}`,
@@ -31,7 +31,7 @@ const Login = () => {
             Sign in with Google
           </Button>
           <Button
-            className="hover:bg-blue-600 transition-all duration-500 hover:scale-110  flex gap-2 items-center drop-shadow-lg"
+            className="hover:bg-blue-600 transition-all text-xs md:text-sm duration-500 hover:scale-110  flex gap-2 items-center drop-shadow-lg"
             variant={`${mode ? "outlined" : "contained"}`}
             sx={{
               color: `${mode ? "white" : "black"}`,
@@ -40,11 +40,11 @@ const Login = () => {
               borderRadius: "10px",
             }}
           >
-            <GitHubIcon sx={{ color: "yellow" }} />
+            <GitHubIcon sx={{ color: "orange" }} />
             Sign in with GitHub
           </Button>
           <Button
-            className="hover:bg-blue-600 transition-all duration-500 hover:scale-110  flex gap-2 items-center drop-shadow-lg"
+            className="hover:bg-blue-600 transition-all text-xs md:text-sm duration-500 hover:scale-110  flex gap-2 items-center drop-shadow-lg"
             variant={`${mode ? "outlined" : "contained"}`}
             sx={{
               color: `${mode ? "white" : "black"}`,
@@ -53,7 +53,7 @@ const Login = () => {
               borderRadius: "10px",
             }}
           >
-            <FacebookIcon sx={{ color: "lightblue" }} />
+            <FacebookIcon sx={{ color: "#3b82f6" }} />
             Sign in with Facebook
           </Button>
         </div>
