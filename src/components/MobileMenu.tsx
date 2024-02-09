@@ -18,9 +18,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
     >
       {isOpenMenu && (
         <div
-          className={` ${
-            mode ? " bg-black " : " bg-white "
-          }border-l border-b  md:hidden
+          className={` ${mode ? " bg-black " : " bg-white "} md:hidden
           h-screen w-[280px] md:w-[300px]  py-12 px-10 `}
         >
           {MenuLinks.map((link, id) => (
@@ -29,7 +27,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
               key={id}
             >
               <Link href={link.link}>
-                <p className=" text-xl p-3 w-full rounded-xl hover:bg-blue-500">
+                <p className=" text-xl p-3 w-full rounded-xl hover:bg-blue-700">
                   {link.label}
                 </p>
               </Link>

@@ -31,7 +31,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="h-[80px] drop-shadow-lg relative border-b z-50 ">
+    <nav className="h-[80px] drop-shadow-lg  relative z-50 ">
       <div className="flex flex-row h-full w-full justify-between items-center px-5">
         <div> My Posts</div>
         <h1 className=" text-xl md:text-4xl font-bold">NEXT-Blog</h1>

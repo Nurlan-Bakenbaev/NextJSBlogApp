@@ -31,3 +31,10 @@ a {
   background: white;
   color: black;
 }
+
+.bg-dark {
+  background-color: #1e293b;
+}
+.bg-light {
+  background-color: #ebebeb;
+}
