@@ -8,6 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import SimpleBackdrop from "./LayOver";
 import ModeSwitcher from "./Switcher/ModeSwitcher";
+
 const Navbar = () => {
   const { mode } = useSelector((state) => state?.themeMode);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -22,6 +23,7 @@ const Navbar = () => {
         setIsOpenMenu(false);
       }
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -34,9 +36,10 @@ const Navbar = () => {
     <nav className="h-[80px] drop-shadow-lg  relative z-50 ">
       <div className="flex flex-row h-full w-full justify-between items-center px-5">
         <div> My Posts</div>
-        <h1 className=" text-xl md:text-4xl font-bold">NEXT-Blog</h1>
+        <Link href={"/"} className=" text-xl md:text-4xl font-bold">
+          NEXT-Blog
+        </Link>
         <div className="flex gap-3 items-center">
-          {/*HERE GOES SWITCHER */}
           <div className="hidden md:flex">
             <ModeSwitcher />
           </div>

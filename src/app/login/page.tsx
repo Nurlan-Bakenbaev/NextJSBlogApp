@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 const Login = () => {
   const { mode } = useSelector((state) => state?.themeMode);
 
@@ -16,7 +17,11 @@ const Login = () => {
         }  flex
         justify-center w-[360px] h-[380px] items-center rounded-md `}
       >
-        <div className="flex flex-col gap-5  ">
+        <div className="flex flex-col gap-5 text-center  ">
+          <div className="flex mx-auto gap-2 items-center">
+            <h3 className=" text-lg lg:text-2xl">LOGIN </h3>
+            <AccountCircleIcon sx={{ fontSize: "50px" }} />
+          </div>
           <Button
             className="hover:bg-blue-600 transition-all text-xs md:text-sm duration-500 hover:scale-110 flex gap-2 items-center drop-shadow-lg"
             variant={`${mode ? "outlined" : "contained"}`}
