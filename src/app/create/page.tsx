@@ -1,23 +1,32 @@
 "use client";
-import React, { useState } from "react";
-import ImageIcon from "@mui/icons-material/Image";
+import React, { useEffect, useState } from "react";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
-import VideocamIcon from "@mui/icons-material/Videocam";
 import { Box, Button, TextField } from "@mui/material";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 const CreatePost = () => {
   const [post, setPost] = useState({
     title: "",
-    file: "",
+    file: null,
     postText: "",
   });
   const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPost({ ...post, title: e.target.value });
   };
+  const handleFile = (e: any) => {
+    const selectedFile = e.target.files[0];
+    setPost({ ...post, file: selectedFile });
+  };
   const handlePostText = (value: string) => {
     setPost({ ...post, postText: value });
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(post, "clicked");
+
+    setPost({ title: "", file: null, postText: "" });
+  };
+
   return (
     <div>
       <div className="flex flex-col gap-5">
@@ -31,23 +40,37 @@ const CreatePost = () => {
           />
         </Box>
         <div>
-          <label className="hover:text-blue-500 outline px-4 py-1 rounded-md mr-5">
-            <ImageIcon sx={{ color: "lightblue" }} />
+          <label
+            htmlFor="file"
+            className="hover:text-blue-500 outline px-4 py-1 rounded-md mx-5"
+          >
+            <AttachFileIcon />
+            {post.file && (
+              <span className="text-blue-500"> {post.file.name}</span>
+            )}
           </label>
-          <label className="hover:text-blue-500 outline px-4 py-1 rounded-md mx-5">
-            <AttachFileIcon sx={{ color: "red" }} />
-          </label>
-          <label className="hover:text-blue-500 outline px-4 py-1 rounded-md mx-5">
-            <VideocamIcon sx={{ color: "orange" }} />
-          </label>
+          <Button
+            onClick={handleSubmit}
+            variant="outlined"
+            className="transition-all ease-in-out 
+            duration-200 hover:scale-110"
+          >
+            Post
+          </Button>
+          <input
+            onChange={handleFile}
+            className="hidden"
+            id="file"
+            type="file"
+          />
         </div>
         <div>
           <ReactQuill
-            placeholder="Your post..."
-            onChange={handlePostText}
-            value={post.postText}
-            className="bg-white w-full text-black"
+            className="bg-white text-black min-h-[140px] w-full rounded-md"
             theme="snow"
+            value={post.postText}
+            onChange={handlePostText}
+            placeholder="Tell us a story..."
           />
         </div>
       </div>

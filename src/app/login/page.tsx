@@ -58,7 +58,7 @@ const Login = () => {
               borderRadius: "10px",
             }}
           >
-            <FacebookIcon sx={{ color: "#3b82f6" }} />
+            <FacebookIcon  />
             Sign in with Facebook
           </Button>
         </div>
