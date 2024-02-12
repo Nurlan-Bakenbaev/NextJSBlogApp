@@ -6,9 +6,11 @@ import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { signIn, useSession } from "next-auth/react";
 const Login = () => {
   const { mode } = useSelector((state) => state?.themeMode);
-
+  const { data, status } = useSession();
+  console.log(data, status);
   return (
     <div className=" flex justify-center items-center">
       <div
@@ -23,6 +25,7 @@ const Login = () => {
             <AccountCircleIcon sx={{ fontSize: "50px" }} />
           </div>
           <Button
+            onClick={() => signIn("google")}
             className="hover:bg-blue-600 transition-all text-xs md:text-sm duration-500 hover:scale-110 flex gap-2 items-center drop-shadow-lg"
             variant={`${mode ? "outlined" : "contained"}`}
             sx={{
@@ -58,7 +61,7 @@ const Login = () => {
               borderRadius: "10px",
             }}
           >
-            <FacebookIcon  />
+            <FacebookIcon />
             Sign in with Facebook
           </Button>
         </div>

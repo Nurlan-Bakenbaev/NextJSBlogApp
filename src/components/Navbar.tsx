@@ -8,6 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import SimpleBackdrop from "./LayOver";
 import ModeSwitcher from "./Switcher/ModeSwitcher";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const { mode } = useSelector((state) => state?.themeMode);
@@ -31,6 +32,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  const { status } = useSession();
 
   return (
     <nav className="h-[80px] drop-shadow-lg  relative z-50 ">
@@ -50,6 +52,11 @@ const Navbar = () => {
               </Link>
             </div>
           ))}
+          {status === "unauthenticated" ? (
+            <Link href={"login"}> Login</Link>
+          ) : (
+            <button onClick={() => signOut()}> Logout</button>
+          )}
         </div>
         <div className="block md:hidden z-50 ">
           <button onClick={toggleMenu}>

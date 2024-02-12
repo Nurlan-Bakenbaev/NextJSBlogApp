@@ -25,9 +25,4 @@ export const MenuLinks: MenuLink[] = [
     label: "Create",
     link: "/create",
   },
-  {
-    id: 5,
-    label: "Login",
-    link: "/login",
-  },
 ];
