@@ -5,7 +5,6 @@ import prisma from "./connect";
 import { getServerSession } from "next-auth";
 
 export const authOptions = {
-  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID!,
@@ -16,6 +15,7 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_SECRET!,
     }),
   ],
+  adapter: PrismaAdapter(prisma),
 };
 
 export const getAuthSession = () => getServerSession(authOptions);
