@@ -7,10 +7,19 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { signIn, useSession } from "next-auth/react";
+import Loading from "@/components/Switcher/Loading";
+import { useRouter } from "next/navigation";
 const Login = () => {
+  const router = useRouter();
   const { mode } = useSelector((state) => state?.themeMode);
   const { data, status } = useSession();
   console.log(data, status);
+  if (status === "loading") {
+    return <Loading />;
+  }
+  if (status === "authenticated") {
+    router.push("/");
+  }
   return (
     <div className=" flex justify-center items-center">
       <div
