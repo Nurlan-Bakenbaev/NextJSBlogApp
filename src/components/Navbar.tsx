@@ -9,6 +9,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import SimpleBackdrop from "./LayOver";
 import ModeSwitcher from "./Switcher/ModeSwitcher";
 import { signOut, useSession } from "next-auth/react";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { mode } = useSelector((state) => state?.themeMode);
@@ -35,7 +37,7 @@ const Navbar = () => {
   const { status } = useSession();
 
   return (
-    <nav className="h-[80px] drop-shadow-lg  relative z-50 ">
+    <nav className="h-[80px]    drop-shadow-lg  relative z-50 ">
       <div className="flex flex-row h-full w-full justify-between items-center px-5">
         <div> My Posts</div>
         <Link href={"/"} className=" text-xl md:text-4xl font-bold">

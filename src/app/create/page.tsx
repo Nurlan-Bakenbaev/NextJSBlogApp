@@ -1,15 +1,22 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import { Box, Button, TextField } from "@mui/material";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import Loading from "@/components/Switcher/Loading";
+import { ToastContainer, toast } from "react-toastify";
 const CreatePost = () => {
   const [post, setPost] = useState({
     title: "",
     file: null,
     postText: "",
   });
+  const router = useRouter();
+  const { status } = useSession();
+
   const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPost({ ...post, title: e.target.value });
   };
@@ -26,7 +33,10 @@ const CreatePost = () => {
 
     setPost({ title: "", file: null, postText: "" });
   };
-
+  if (status === "unauthenticated") {
+    router.push("/");
+    return null;
+  }
   return (
     <div>
       <div className="flex flex-col gap-5">

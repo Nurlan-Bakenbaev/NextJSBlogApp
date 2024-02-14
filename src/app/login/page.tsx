@@ -12,8 +12,7 @@ import { useRouter } from "next/navigation";
 const Login = () => {
   const router = useRouter();
   const { mode } = useSelector((state) => state?.themeMode);
-  const { data, status } = useSession();
-  console.log(data, status);
+  const { status } = useSession();
   if (status === "loading") {
     return <Loading />;
   }
