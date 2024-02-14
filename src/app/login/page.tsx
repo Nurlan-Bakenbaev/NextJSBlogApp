@@ -19,6 +19,7 @@ const Login = () => {
   }
   if (status === "authenticated") {
     router.push("/");
+    return null;
   }
   return (
     <div className=" flex justify-center items-center">
@@ -46,32 +47,6 @@ const Login = () => {
           >
             <GoogleIcon sx={{ color: "red" }} />
             Sign in with Google
-          </Button>
-          <Button
-            className="hover:bg-blue-600 transition-all text-xs md:text-sm duration-500 hover:scale-110  flex gap-2 items-center drop-shadow-lg"
-            variant={`${mode ? "outlined" : "contained"}`}
-            sx={{
-              color: `${mode ? "white" : "black"}`,
-              width: "260px",
-              padding: "10px",
-              borderRadius: "10px",
-            }}
-          >
-            <GitHubIcon sx={{ color: "orange" }} />
-            Sign in with GitHub
-          </Button>
-          <Button
-            className="hover:bg-blue-600 transition-all text-xs md:text-sm duration-500 hover:scale-110  flex gap-2 items-center drop-shadow-lg"
-            variant={`${mode ? "outlined" : "contained"}`}
-            sx={{
-              color: `${mode ? "white" : "black"}`,
-              width: "260px",
-              padding: "10px",
-              borderRadius: "10px",
-            }}
-          >
-            <FacebookIcon />
-            Sign in with Facebook
           </Button>
         </div>
       </div>
