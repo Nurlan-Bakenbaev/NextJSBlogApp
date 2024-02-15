@@ -54,11 +54,13 @@ const Navbar = () => {
               </Link>
             </div>
           ))}
-          {status === "unauthenticated" ? (
-            <Link href={"login"}> Login</Link>
-          ) : (
-            <button onClick={() => signOut()}> Logout</button>
-          )}
+          <div className="hidden md:block">
+            {status === "unauthenticated" ? (
+              <Link href={"login"}> Login</Link>
+            ) : (
+              <button onClick={() => signOut()}> Logout</button>
+            )}
+          </div>
         </div>
         <div className="block md:hidden z-50 ">
           <button onClick={toggleMenu}>
