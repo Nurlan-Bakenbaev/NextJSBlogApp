@@ -19,7 +19,7 @@ const CategoryList = async () => {
         {data.map((slug) => (
           <Link
             href={slug.slug}
-            className=" odd:bg-blue-400 flex flex-row items-center justify-center
+            className=" odd:bg-blue-400 transition-all duration-300 ease-in-out hover:scale-110 flex flex-row items-center justify-center
              text-black even:bg-red-400
              w-[120px] py-2 rounded-md  capitalize"
             key={slug._id}
