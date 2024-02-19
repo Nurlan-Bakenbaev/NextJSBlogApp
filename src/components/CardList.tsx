@@ -26,7 +26,7 @@ const CardList = async ({ page }) => {
             date={post.createdAt}
           />
         ))}
-        <Pagination  page={page}/>
+        <Pagination page={page} />
       </div>
       <div className=" flex flex-col border-none md:border-l-[1px] border-gray-700 px-2 py-1">
         <h3 className="text-lg font-bold  text-right">Popular Posts</h3>

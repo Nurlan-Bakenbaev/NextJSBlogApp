@@ -4,7 +4,7 @@ import Featured from "@/components/Featured";
 import React from "react";
 
 const Home = ({ searchParams }) => {
-  const page = 1 || parseInt(searchParams.page);
+  const page = parseInt(searchParams.page);
   return (
     <div>
       <div className="flex flex-col gap-10">
