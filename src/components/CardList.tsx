@@ -10,13 +10,16 @@ const getData = async (page) => {
   return res.json();
 };
 const CardList = async ({ page }) => {
-  const data = await getData(page);
+  const { posts, totalCount } = await getData(page);
+  const POST_PER_PAGE = 2;
+  const hasPrev = POST_PER_PAGE * (page - 1) > 0;
+  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < totalCount;
 
   return (
     <div className="flex flex-col md:flex-row gap-5 items-baseline ">
       <div className="flex flex-col gap-5 mb-5">
         <h2 className="text-lg font-bold text-right">Recent Posts</h2>
-        {data.map((post) => (
+        {posts.map((post) => (
           <PostCard
             key={post._id}
             img={post.img}
@@ -26,7 +29,7 @@ const CardList = async ({ page }) => {
             date={post.createdAt}
           />
         ))}
-        <Pagination page={page} />
+        <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
       </div>
       <div className=" flex flex-col border-none md:border-l-[1px] border-gray-700 px-2 py-1">
         <h3 className="text-lg font-bold  text-right">Popular Posts</h3>

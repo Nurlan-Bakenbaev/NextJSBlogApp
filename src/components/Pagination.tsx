@@ -9,17 +9,15 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
   return (
     <div className="w-full  flex justify-center gap-5 ">
       <Button
-        className={`${hasPrev && "bg-slate-800 text-red-800"}`}
         onClick={() => router.push(`?page=${page - 1}`)}
         color="success"
         variant="outlined"
-        disabled={hasPrev}
+        disabled={hasNext}
       >
         Prev
       </Button>
       <Button
-        className={`${hasNext && "bg-slate-800 text-red-800"}`}
-        disabled={hasNext}
+        disabled={hasPrev}
         onClick={() => router.push(`?page=${page + 1}`)}
         sx={{ border: "1px solid blue" }}
         variant="outlined"
