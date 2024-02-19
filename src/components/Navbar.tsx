@@ -37,7 +37,7 @@ const Navbar = () => {
   const { status } = useSession();
 
   return (
-    <nav className="h-[80px]    drop-shadow-lg  relative z-50 ">
+    <nav className="h-[80px] w-full lg:w-[80%] mx-auto drop-shadow-lg  relative z-50 ">
       <div className="flex flex-row h-full w-full justify-between items-center px-5">
         <div> My Posts</div>
         <Link href={"/"} className=" text-xl md:text-4xl font-bold">

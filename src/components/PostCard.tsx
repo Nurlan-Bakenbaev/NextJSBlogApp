@@ -1,6 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import { formatTimeAgo, formatTimestamp } from "@/utils/dateConverter";
+import {
+  formatTimeAgo,
+  formatTimestamp,
+  trunkText,
+} from "@/utils/dateConverter";
 
 const PostCard = ({ img, title, desc, slug, date }) => {
   return (
@@ -18,7 +22,7 @@ const PostCard = ({ img, title, desc, slug, date }) => {
         </div>
         <div className="flex flex-col gap-2 w-full">
           <h2 className="text-md md:text-lg uppercase lg:text-xl ">{title}</h2>
-          <p className="text-xs">{desc}</p>
+          <p className="text-xs">{trunkText(desc, 60)}</p>
           <div className="text-sm flex justify-between">
             <div className="text-gray-500">
               <p>{formatTimestamp(date)}</p>

@@ -27,10 +27,10 @@ export default function RootLayout({
             <AuthProvider>
               <ProviderRedux>
                 <ThemeProvider>
+                  <Navbar />
                   <div
-                    className={`${oxygen.className}px-2 md:px-10  w-[100%] md:w-[80]  mx-auto`}
+                    className={`${oxygen.className} px-3 md:px-10  w-[100%] md:w-[80]  mx-auto`}
                   >
-                    <Navbar />
                     <main
                       className={` ${inter.className} min-h-screen h-full px-2`}
                     >

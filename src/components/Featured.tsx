@@ -4,7 +4,7 @@ import Buttons from "./Buttons";
 
 const Featured = () => {
   return (
-    <div className=" px-5 md:px-1  ">
+    <div className=" md:px-1  ">
       <div>
         <div className="flex flex-col  md:flex-row  justify-center items-center gap-5">
           <div>

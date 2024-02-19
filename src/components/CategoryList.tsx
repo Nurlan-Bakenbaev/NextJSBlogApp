@@ -14,7 +14,7 @@ const getData = async () => {
 const CategoryList = async () => {
   const data = await getData();
   return (
-    <div className="my-2 md:my-5">
+    <div className="my-2  md:my-8">
       <div className=" flex flex-row justify-between flex-wrap gap-3 ">
         {data.map((slug) => (
           <Link
