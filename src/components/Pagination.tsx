@@ -5,7 +5,6 @@ import React from "react";
 
 const Pagination = ({ page, hasPrev, hasNext }) => {
   const router = useRouter();
-  console.log(page);
   return (
     <div className="w-full  flex justify-center gap-5 ">
       <Button

@@ -14,7 +14,7 @@ const CardList = async ({ page }) => {
   const POST_PER_PAGE = 2;
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < totalCount;
-
+  console.log(page);
   return (
     <div className="flex flex-col md:flex-row gap-5 items-baseline ">
       <div className="flex flex-col gap-5 mb-5">
