@@ -40,6 +40,7 @@ const CreatePost = () => {
   return (
     <div>
       <div className="flex flex-col gap-5">
+        <h3 className="text-xl text-center">Create a new Post</h3>
         <Box component="form" sx={{ color: "white" }}>
           <TextField
             onChange={handleTitle}

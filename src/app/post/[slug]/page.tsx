@@ -1,10 +1,10 @@
 import Comments from "@/components/Comments";
 import PopularPost from "@/components/PopularPost";
-import { Avatar, dividerClasses } from "@mui/material";
+import { Avatar } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-const BlogPage = () => {
+const SinglePage = () => {
   const isUser = true;
   return (
     <div>
@@ -48,7 +48,6 @@ const BlogPage = () => {
           {isUser ? (
             <div className="w-full">
               <Comments />
-            
             </div>
           ) : (
             <div>Login to leave a comments </div>
@@ -59,12 +58,10 @@ const BlogPage = () => {
           <h4 className="text-lg font-bold  text-right">Popular Posts</h4>
           <PopularPost />
           <PopularPost />
-          <PopularPost />
-          <PopularPost />
         </div>
       </div>
     </div>
   );
 };
 
-export default BlogPage;
+export default SinglePage;

@@ -18,7 +18,7 @@ const CategoryList = async () => {
       <div className=" flex flex-row justify-between flex-wrap gap-3 ">
         {data.map((slug) => (
           <Link
-            href={slug.slug}
+            href="/blog?cat=style"
             className=" odd:bg-blue-400 transition-all duration-300 ease-in-out hover:scale-110 flex flex-row items-center justify-center
              text-black even:bg-red-400
              w-[120px] py-2 rounded-md  capitalize"

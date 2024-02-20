@@ -31,7 +31,7 @@ const Featured = () => {
                 alt="Hero-image"
               />
             </div>
-            <div className="flex flex-col items-center  gap-3 w-full md:max-w-[320px]">
+            <div className="flex flex-col  gap-3 w-full md:max-w-[320px]">
               <div className="flex justify-between items-center">
                 <h2 className="text-md md:text-2xl">{lastPost?.title}</h2>
                 <p className="text-gray-600 text-xs">
