@@ -11,20 +11,19 @@ const getData = async () => {
   }
   return res.json();
 };
+
 const CategoryList = async () => {
   const data = await getData();
   return (
     <div className="my-2  md:my-8">
-      <div className=" flex flex-row justify-between flex-wrap gap-3 ">
-        {data.map((slug) => (
+      <div className="flex flex-row justify-between flex-wrap gap-3">
+        {data.map((item) => (
           <Link
-            href="/blog?cat=style"
-            className=" odd:bg-blue-400 transition-all duration-300 ease-in-out hover:scale-110 flex flex-row items-center justify-center
-             text-black even:bg-red-400
-             w-[120px] py-2 rounded-md  capitalize"
-            key={slug._id}
+            href={`/blog?cat=${item.title}`}
+            className="odd:bg-blue-400 transition-all duration-300 ease-in-out hover:scale-110 flex flex-row items-center justify-center text-black even:bg-red-400 w-[120px] py-2 rounded-md capitalize"
+            key={item._id}
           >
-            {slug.title}
+            {item.title}
           </Link>
         ))}
       </div>

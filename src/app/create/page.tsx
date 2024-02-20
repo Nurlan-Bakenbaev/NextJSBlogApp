@@ -6,8 +6,6 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import Loading from "@/components/Switcher/Loading";
-import { ToastContainer, toast } from "react-toastify";
 const CreatePost = () => {
   const [post, setPost] = useState({
     title: "",
@@ -40,7 +38,9 @@ const CreatePost = () => {
   return (
     <div>
       <div className="flex flex-col gap-5">
-        <h3 className="text-xl text-center">Create a new Post</h3>
+        <h1 className=" bg-blue-500 py-2 capitalize rounded-md text-center text:xl my-2 md:my-5 md:text-3xl">
+          Create Post
+        </h1>
         <Box component="form" sx={{ color: "white" }}>
           <TextField
             onChange={handleTitle}

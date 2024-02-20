@@ -2,7 +2,7 @@ import React from "react";
 import PostCard from "./PostCard";
 import PopularPost from "./PopularPost";
 import Pagination from "./Pagination";
-const getData = async (page,cat) => {
+const getData = async (page, cat) => {
   const res = await fetch(
     `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
     {
