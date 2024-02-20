@@ -9,6 +9,7 @@ const getData = async (page) => {
   }
   return res.json();
 };
+
 const CardList = async ({ page }) => {
   const { posts, totalCount } = await getData(page);
   const POST_PER_PAGE = 2;
@@ -39,5 +40,4 @@ const CardList = async ({ page }) => {
     </div>
   );
 };
-
 export default CardList;

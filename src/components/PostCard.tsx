@@ -21,7 +21,7 @@ const PostCard = ({ img, title, desc, slug, date }) => {
           />
         </div>
         <div className="flex flex-col gap-2 w-full">
-          <h2 className="text-md md:text-lg uppercase lg:text-xl ">{title}</h2>
+          <h2 className="text-sm md:text-lg uppercase lg:text-xl ">{title}</h2>
           <p className="text-xs">{trunkText(desc, 60)}</p>
           <div className="text-sm flex justify-between">
             <div className="text-gray-500">
