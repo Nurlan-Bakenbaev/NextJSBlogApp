@@ -1,22 +1,40 @@
+"use client";
 import { Avatar } from "@mui/material";
 import React from "react";
+import useSWR from "swr";
+
 interface UserAvatar {
   commentImage: string;
   userName: string;
   postDate: string;
 }
-const User: React.FC<UserAvatar> = ({ commentImage, userName, postDate }) => {
+
+const fetcher = async (url) => {
+  const res = await fetch(url);
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    const error = new Error(data.message);
+    throw error;
+  }
+
+  return data;
+};
+
+const User: React.FC<UserAvatar> = ({ postSlug }) => {
+  const { data, error } = useSWR(
+    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    fetcher
+  );
+  console.log(data);
   return (
     <div className="flex flex-col ">
       <div className="flex gap-2">
-        <Avatar
-          alt="User Image"
-          src={commentImage}
-          sx={{ width: 40, height: 40 }}
-        />
+        <Avatar alt="User Image" src={""} sx={{ width: 40, height: 40 }} />
         <div>
-          <p className="text-sm">{userName}</p>
-          <p className="text-xs">{postDate}</p>
+          <p className="text-sm">{""}</p>
+          <p className="text-xs">{""}</p>
         </div>
       </div>
 

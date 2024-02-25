@@ -50,11 +50,7 @@ const SinglePage = async ({ params }) => {
             <div className="w-full">
               <Comments />
               <div className="py-3">
-                <User
-                  commentImage={"/pexels-trinity-kubassek-445109.jpg"}
-                  userName={"nothing"}
-                  postDate={"nothingYET"}
-                />
+                <User postSlug={slug} />
               </div>
             </div>
           ) : (

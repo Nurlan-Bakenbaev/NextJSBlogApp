@@ -1,7 +1,21 @@
 "use client";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 import React from "react";
-
 const Comments = () => {
+  const { status } = useSession();
+  console.log(status);
+  if (status == "unauthenticated") {
+    return (
+      <p className="text-lg  italic mt-8">
+        Please
+        <Link className="text-blue-500 px-1 " href={"/login"}>
+          login
+        </Link>
+        to leave a comment
+      </p>
+    );
+  }
   return (
     <div>
       <h3 className="text-lg lg:text-2xl py-2">Comments</h3>

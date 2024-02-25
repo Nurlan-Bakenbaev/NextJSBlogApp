@@ -26,7 +26,6 @@ const CardList = async ({ page, cat = "" }) => {
         <h2 className="text-lg font-bold text-right">Recent Posts</h2>
         {posts.map((post) => (
           <PostCard
-            
             key={post._id}
             img={post.img}
             title={post.title}
