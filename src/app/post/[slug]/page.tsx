@@ -20,8 +20,6 @@ const getData = async (slug) => {
 const SinglePage = async ({ params }) => {
   const { slug } = params;
   const data = await getData(slug);
-  console.log(data.user);
-
   const isUser = true;
   if (!data) {
     return <Loading />;

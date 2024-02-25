@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import {
@@ -7,22 +6,13 @@ import {
   trunkText,
 } from "@/utils/dateConverter";
 import Link from "next/link";
-import { useSelector } from "react-redux";
-
 const PostCard = ({ img, title, desc, slug, date }) => {
-  const { mode } = useSelector((state) => state?.themeMode);
-
   return (
-    <Link
-      className={`p-2 transition-all duration-300 rounded-md ${
-        mode ? "hover:bg-slate-800" : "hover:bg-slate-200"
-      } `}
-      href={`/post/${slug}`}
-    >
+    <Link className=" group" href={`/post/${slug}`}>
       <div className="flex border-b border-slate-700 pb-4 flex-row items-center gap-5">
         <div>
           <Image
-            className=" rounded-lg filter  hover:brightness-50 duration-500 ease-in-out "
+            className=" rounded-lg filter  group-hover:brightness-50 duration-500 ease-in-out "
             objectFit="contain"
             width={300}
             height={300}
