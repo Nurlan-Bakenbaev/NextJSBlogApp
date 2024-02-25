@@ -4,7 +4,19 @@ import { Avatar } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-const SinglePage = () => {
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    cache: "no-cache",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to get the Post ");
+  }
+};
+
+const SinglePage = async ({ params }) => {
+  const { slug } = params;
+  const data = await getData(slug);
+  console.log(data);
   const isUser = true;
   return (
     <div>
@@ -45,6 +57,7 @@ const SinglePage = () => {
             veritatis praesentium eligendi ex iure, molestiae atque officia
             doloribus quasi. At, natus! Adipisci sit sunt illum labore nobis.
           </p>
+          {data && <p dangerouslySetInnerHTML={{ __html: data.desc }} />}
           {isUser ? (
             <div className="w-full">
               <Comments />

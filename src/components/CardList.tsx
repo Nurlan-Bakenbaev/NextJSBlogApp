@@ -15,14 +15,14 @@ const getData = async (page, cat) => {
   return res.json();
 };
 
-const CardList = async ({ page, cat }) => {
+const CardList = async ({ page, cat = "" }) => {
   const { posts, totalCount } = await getData(page, cat);
   const POST_PER_PAGE = 2;
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < totalCount;
   console.log(page);
   return (
-    <div className="flex flex-col md:flex-row gap-5 items-baseline ">
+    <div className="flex flex-col justify-center md:flex-row gap-5 items-baseline ">
       <div className="flex flex-col gap-5 mb-5">
         <h2 className="text-lg font-bold text-right">Recent Posts</h2>
         {posts.map((post) => (

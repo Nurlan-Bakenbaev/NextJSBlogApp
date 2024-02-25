@@ -5,10 +5,11 @@ import {
   formatTimestamp,
   trunkText,
 } from "@/utils/dateConverter";
+import Link from "next/link";
 
 const PostCard = ({ img, title, desc, slug, date }) => {
   return (
-    <div>
+    <Link href={`/post/${slug}`}>
       <div className="flex border-b border-slate-700 pb-4 flex-row items-center gap-5">
         <div>
           <Image
@@ -32,7 +33,7 @@ const PostCard = ({ img, title, desc, slug, date }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
