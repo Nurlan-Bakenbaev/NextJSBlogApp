@@ -5,9 +5,9 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 const CreativeFooter = () => {
   return (
     <footer className=" p-8">
-      <div className="container mx-auto flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-bold mb-2">Connect with us</h1>
+      <div className="container mx-auto flex justify-center lg:justify-between items-center">
+        <div className="hidden md:block f">
+          <h1 className="ont-bold mb-2">Connect with us</h1>
           <p>Follow us on social media for updates and more.</p>
         </div>
         <div className="flex space-x-4">

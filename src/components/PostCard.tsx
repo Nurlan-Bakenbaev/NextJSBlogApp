@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import {
@@ -6,10 +7,18 @@ import {
   trunkText,
 } from "@/utils/dateConverter";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 const PostCard = ({ img, title, desc, slug, date }) => {
+  const { mode } = useSelector((state) => state?.themeMode);
+
   return (
-    <Link href={`/post/${slug}`}>
+    <Link
+      className={`p-2 transition-all duration-300 rounded-md ${
+        mode ? "hover:bg-slate-800" : "hover:bg-slate-200"
+      } `}
+      href={`/post/${slug}`}
+    >
       <div className="flex border-b border-slate-700 pb-4 flex-row items-center gap-5">
         <div>
           <Image
@@ -22,8 +31,10 @@ const PostCard = ({ img, title, desc, slug, date }) => {
           />
         </div>
         <div className="flex flex-col gap-2 w-full">
-          <h2 className="text-sm md:text-lg uppercase lg:text-xl ">{title}</h2>
-          <p className="text-xs">{trunkText(desc, 60)}</p>
+          <h2 className="text-sm md:text-lg uppercase lg:text-xl ">
+            {trunkText(title, 25)}
+          </h2>
+          <p className="text-xs">{trunkText(desc, 70)}</p>
           <div className="text-sm flex justify-between">
             <div className="text-gray-500">
               <p>{formatTimestamp(date)}</p>

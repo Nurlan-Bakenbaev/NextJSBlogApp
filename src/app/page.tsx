@@ -5,7 +5,6 @@ import React from "react";
 
 const Home = ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1;
-  console.log(page);
   return (
     <div>
       <div className="flex flex-col gap-10">

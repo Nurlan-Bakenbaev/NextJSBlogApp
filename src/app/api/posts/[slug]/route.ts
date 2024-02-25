@@ -2,12 +2,13 @@ import prisma from "@/utils/prisma";
 import { NextResponse } from "next/server";
 
 //GET ONE POST
-export const GET = async (req, { params }) => {
-  const { slug } = params;
+export const GET = async (req, res) => {
+  const { slug } = res.params;
 
   try {
     const post = await prisma.post.findUnique({
       where: { slug },
+      include: { user: true },
     });
     return new NextResponse(
       JSON.stringify(post, {
