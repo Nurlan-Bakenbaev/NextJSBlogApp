@@ -25,17 +25,3 @@ export const GET = async (req) => {
     );
   }
 };
-// Create A COMMENT
-export const POST = async (req) => {
-  const  data.data  = req;
-  console.log(data);
-  try {
-    const body = await req.json();
-    const comment = await prisma.comment.create({
-      data: { ...body, userEmail: data.user.email },
-    });
-    return new NextResponse(JSON.stringify(comment, { status: 200 }));
-  } catch (err) {
-    console.log(err);
-  }
-};

@@ -47,7 +47,7 @@ const SinglePage = async ({ params }) => {
         <div className="flex flex-col px-2">
           {data && <p dangerouslySetInnerHTML={{ __html: data?.desc }} />}
           {isUser ? (
-            <div className="w-full">
+            <div className="w-full hidden">
               <Comments postSlug={slug} />
               <div className="py-3">
                 <User postSlug={slug} />
