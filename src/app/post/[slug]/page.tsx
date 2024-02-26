@@ -48,7 +48,7 @@ const SinglePage = async ({ params }) => {
           {data && <p dangerouslySetInnerHTML={{ __html: data?.desc }} />}
           {isUser ? (
             <div className="w-full">
-              <Comments />
+              <Comments postSlug={slug} />
               <div className="py-3">
                 <User postSlug={slug} />
               </div>

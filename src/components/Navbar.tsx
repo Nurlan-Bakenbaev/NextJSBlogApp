@@ -9,13 +9,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import SimpleBackdrop from "./LayOver";
 import ModeSwitcher from "./Switcher/ModeSwitcher";
 import { signOut, useSession } from "next-auth/react";
-import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { mode } = useSelector((state) => state?.themeMode);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-
+  const { status } = useSession();
   const toggleMenu = () => {
     setIsOpenMenu(!isOpenMenu);
   };
@@ -34,7 +32,6 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const { status } = useSession();
 
   return (
     <nav className="h-[80px] w-full lg:w-[80%] mx-auto drop-shadow-lg  relative z-50 ">
@@ -56,7 +53,7 @@ const Navbar = () => {
           ))}
           <div className="hidden md:block">
             {status === "unauthenticated" ? (
-              <Link href={"login"}> Login</Link>
+              <Link href={"/login"}> Login</Link>
             ) : (
               <button onClick={() => signOut()}> Logout</button>
             )}

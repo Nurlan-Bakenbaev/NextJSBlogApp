@@ -3,22 +3,20 @@ import { Button } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import GoogleIcon from "@mui/icons-material/Google";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { signIn, useSession } from "next-auth/react";
 import Loading from "@/components/Switcher/Loading";
-import { useRouter } from "next/navigation";
+
 const Login = () => {
-  const router = useRouter();
+  // const router = useRouter();
+
   const { mode } = useSelector((state) => state?.themeMode);
   const { status } = useSession();
+
   if (status === "loading") {
     return <Loading />;
-  }
-  if (status === "authenticated") {
-    router.push("/");
-    return null;
+  } else if (status === "authenticated") {
+    //router.push("/");
   }
   return (
     <div className=" flex justify-center items-center">

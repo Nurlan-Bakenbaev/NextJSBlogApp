@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MenuLinks } from "./Links";
 import { useSelector } from "react-redux";
 import ModeSwitcher from "./Switcher/ModeSwitcher";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 interface MobileMenuProps {
   isOpenMenu: boolean;
@@ -11,6 +11,7 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpenMenu }) => {
   const { mode } = useSelector((state) => state?.themeMode);
+  const { status } = useSession();
 
   return (
     <div
