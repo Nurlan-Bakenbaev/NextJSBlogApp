@@ -11,14 +11,14 @@ const Comments = ({ postSlug }) => {
     try {
       await fetch("http://localhost:3000/api/comments", {
         method: "POST",
-        body: JSON.stringify({ postSlug, comment }),
+        body: JSON.stringify({ postSlug, comment, data }),
       });
       setComment("");
     } catch (error) {
       console.log(error);
     }
   };
-
+  console.log(postSlug, comment, data);
   if (status == "unauthenticated") {
     return (
       <p className="text-lg  italic mt-8">
@@ -32,7 +32,7 @@ const Comments = ({ postSlug }) => {
   }
   return (
     <div className="mt-10">
-      <form className="flex gap-2" onClick={handleSubmit}>
+      <form className="flex gap-2">
         <input
           value={comment}
           onChange={(e) => setComment(e.target.value)}
@@ -41,7 +41,7 @@ const Comments = ({ postSlug }) => {
           type="text"
         />
         <button
-          type="submit"
+          onClick={handleSubmit}
           className=" px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-800"
         >
           Send
